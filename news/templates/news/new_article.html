@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create article</title>
+    {% load static %}
+    <link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <p>Title</p>
+    <input type="text" name="title">
+    <br>
+    <p>Article</p>
+    <textarea name="text"></textarea>
+    <br><br>
+    <input type="submit" value="Create">
+</form>
+<br><br>
+<a target="_blank" href="{% url 'index' %}">Main page</a>
+</body>
+</html>
